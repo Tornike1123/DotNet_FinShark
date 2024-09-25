@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
+using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
@@ -19,7 +20,7 @@ namespace api.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var stocks = _context.Stock.ToList(); //ToList - Deffered execution(აღსრულება ლისტად გამოტანა)
+            var stocks = _context.Stock.ToList().Select(s => s.ToStockDto()); //ToList - Deffered execution(აღსრულება ლისტად გამოტანა) Select არის იგივე რაც javascript-ში map
             return Ok(stocks);
         }
         [HttpGet("{id}")]
@@ -29,7 +30,7 @@ namespace api.Controllers
             {
                 return NotFound();
             }
-            return Ok(stock);
+            return Ok(stock.ToStockDto());
         }
     }
 }
