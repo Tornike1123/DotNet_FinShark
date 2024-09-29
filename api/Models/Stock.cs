@@ -12,7 +12,7 @@ namespace api.Models
         public string Symbol { get; set; } = string.Empty;
         public string CompanyName { get; set; } = string.Empty;
 
-        [Column(TypeName = "decimal(18,2)")]
+        [Column(TypeName = "decimal(18,2)")] //ატრიბუტი [Column(TypeName = "decimal(18,2)")] გამოიყენება, რათა მონაცემთა ბაზაში ეს ველი decimal ტიპით შეინახოს, მაქსიმუმ 18 ციფრი მთლიან ნაწილში და 2 ციფრი წერტილის შემდეგ.
         public decimal Purchase { get; set; }
         
         [Column(TypeName = "decimal(18,2)")]
