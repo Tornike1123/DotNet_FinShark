@@ -40,7 +40,9 @@ namespace api.Controllers
             var stockModel = stockDto.ToStockFromCreateDTO();
             _context.Stock.Add(stockModel);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(GetById), new {id = stockModel.Id}, stockModel.ToStockDto());
+            return CreatedAtAction(nameof(GetById), new {id = stockModel.Id}, stockModel.ToStockDto());//nameof() ფუნქცია აბრუნებს მითითებული მეთოდის სახელს როგორც string (ამ შემთხვევაში, GetById).
+            //new { id = stockModel.Id }:აქ დინამიურად იქმნება ობიექტი
+            //stockModel.ToStockDto():ეს არის ახალი Stock მოდელის DTO ფორმატში გარდაქმნა, რომელსაც შემდეგ დააბრუნებს პასუხად.
         }
 
         [HttpPut]
