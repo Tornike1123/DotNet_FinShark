@@ -15,7 +15,7 @@ namespace api.Data
         {
             
         }
-        public DbSet<Stock> Stock { get; set;} //DbSet<Comment> Comments – ეს ველი ასევე არის DbSet ტიპის და გამოიყენება მონაცემთა ბაზის ცხრილისთვის, რომელიც ინახავს Comment ობიექტებს. ანუ ეს "Comments" ცხრილი შეინახავს კომენტარებს, რომლებიც დაკავშირებულია აქციებთან (თუ Comment კლასი მართავს ასეთი ტიპის ინფორმაციას).
+        public DbSet<Stock> Stock { get; set;} 
         public DbSet<Comment> Comments { get; set;}
     }
 }
