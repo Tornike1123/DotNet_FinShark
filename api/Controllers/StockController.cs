@@ -9,9 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
 {
-    [Route("api/stock")]
+    [Route("api/stock")]//route-attribute - ადგენს URL-ით რომელი კონკრეტული კონტროლერი და მისი კონკრეტული მეთოდი გამოიძახოს.
     [ApiController]
-    public class StockController : ControllerBase
+    public class StockController : ControllerBase //ControllerBase - გვაძლევს მეთოდებს რომ Api-დან პასუხები გავაგზავნოთ HTTP-ფორმატით:OK(),NotFound(),Created(),BadRequest().
     {
         private readonly ApplicationDBContext _context;
         public StockController(ApplicationDBContext context)
@@ -25,7 +25,7 @@ namespace api.Controllers
             return Ok(stocks);
         }
         [HttpGet("{id}")]
-        public IActionResult GetById([FromRoute] int id){
+        public IActionResult GetById([FromRoute] int id){ //[FromRoute]-გამოიყენება ისეთი პარამეტრისთვის როგორიცაა Id, რომელიც პირდაპირ URL-შია. მაგ: api/stock/5
             var stock = _context.Stock.Find(id);
             if (stock == null)
             {
@@ -35,7 +35,7 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] CreateStockRequestDto stockDto)
+        public IActionResult Create([FromBody] CreateStockRequestDto stockDto) //[FromBody] ის ხშირად გამოიყენება POST, PUT და PATCH მოთხოვნებში, როცა მომხმარებელი აგზავნის მონაცემებს JSON ფორმატში და გინდა, რომ ეს მონაცემები ავტომატურად გადაიყვანო ობიექტად.
         {
             var stockModel = stockDto.ToStockFromCreateDTO();
             _context.Stock.Add(stockModel);
