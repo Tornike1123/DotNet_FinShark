@@ -15,7 +15,7 @@ namespace api.Data
         {
             
         }
-        public DbSet<Stock> Stock { get; set;} 
+        public DbSet<Stock> Stock { get; set;} //მონაცემთა ბაზის ცხრილი დაკავშირებულია Stock კლასთან. ანუ ეს არის მონაცემთა ბაზის Stock ცხრილი. ეს საშუალებას იძლევა, მონაცემთა ბაზის ოპერაციები (CRUD) იმართოს კოდით და არა SQL ბრძანებების საშუალებით.
         public DbSet<Comment> Comments { get; set;}
     }
 }
