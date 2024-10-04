@@ -77,7 +77,7 @@ namespace api.Controllers
             }
             _context.Stock.Remove(stockModel);
             _context.SaveChanges();
-            return Ok(stockModel.ToStockDto());
+            return NoContent();
         }
     }
 }
