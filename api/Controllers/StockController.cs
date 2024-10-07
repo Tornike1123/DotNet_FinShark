@@ -20,7 +20,7 @@ namespace api.Controllers
             _context = context;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll()//წარმოადგენს ასინქრონულ ოპერაციას, რომელსაც შეუძლია დააბრუნოს მნიშვნელობა. შედეგი არის IActionResult
         {
             var stocks = await _context.Stock.ToListAsync(); //ToList - Deffered execution(აღსრულება ლისტად გამოტანა) Select არის იგივე რაც javascript-ში map
             var stockDto = stocks.Select(s => s.ToStockDto());
