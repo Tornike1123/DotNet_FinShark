@@ -11,7 +11,7 @@ namespace api.Data
 
 
     {
-        public ApplicationDBContext(DbContextOptions dbContextOptions) : base(dbContextOptions)//კონსტრუქტორი ApplicationDBContext(DbContextOptions dbContextOptions) – ეს კონსტრუქტორი პასუხისმგებელია ApplicationDBContext კლასის ობიექტის შექმნაზე. მასში გადაეცემა პარამეტრი DbContextOptions, რომელიც განსაზღვრავს, თუ როგორ უნდა კავშირდეს პროგრამა მონაცემთა ბაზასთან (მაგალითად, რომელ მონაცემთა ბაზას გამოიყენებს, რა იქნება მისი კავშირი და სხვა კონფიგურაციები). ეს პარამეტრი შემდეგ გადაეცემა მშობელ DbContext კლასს კონსტრუქტორის მეშვეობით : base(dbContextOptions).
+        public ApplicationDBContext(DbContextOptions dbContextOptions) : base(dbContextOptions)//კონსტრუქტორი ApplicationDBContext(DbContextOptions dbContextOptions) – ეს კონსტრუქტორი პასუხისმგებელია ApplicationDBContext კლასის ობიექტის შექმნაზე. მასში გადაეცემა პარამეტრი DbContextOptions, რომელიც განსაზღვრავს, თუ როგორ უნდა დაკავშირდეს პროგრამა მონაცემთა ბაზასთან (მაგალითად, რომელ მონაცემთა ბაზას გამოიყენებს, რა იქნება მისი კავშირი და სხვა კონფიგურაციები). ეს პარამეტრი შემდეგ გადაეცემა მშობელ DbContext კლასს კონსტრუქტორის მეშვეობით : base(dbContextOptions).
         //base - მშობელი კლასის კონსტრუქტორის გამოსაძახებლად, როდესაც კლასი მემკვიდრეობით იღებს სხვა კლასს.
         {
             
